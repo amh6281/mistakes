@@ -1,3 +1,4 @@
+import Blog from "@/components/Blog";
 import Cart from "@/components/Cart";
 import Conditional from "@/components/Conditional";
 import Form from "@/components/Form";
@@ -7,7 +8,7 @@ import StateImmediate from "@/components/StateImmediate";
 export default function Home() {
   return (
     <>
-      <Cart />
+      <Blog />
     </>
   );
 }
