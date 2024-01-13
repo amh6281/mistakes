@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
 
+type Blog = {
+  title: string;
+  desc: string;
+};
+
 const Blog = () => {
   //   const [post, setPost] = useState();
   //   useEffect(() => {
@@ -10,8 +15,8 @@ const Blog = () => {
   //       });
   //   }, []);
 
-  const [post, setPost] = useState(null); // null로 초기화
-  const [loading, setLoading] = useState(true);
+  const [post, setPost] = useState<Blog | null>(null); // null로 초기화
+  const [loading, setLoading] = useState<boolean>(true);
   // 로딩 추가
   useEffect(() => {
     fetch("https://dummyjson.com/posts/1")
@@ -33,8 +38,8 @@ const Blog = () => {
         "loading..."
       ) : (
         <>
-          <h1>{post.title}</h1>
-          <p>{post.desc}</p>
+          <h1>{post?.title}</h1>
+          <p>{post?.desc}</p>
         </>
       )}
     </div>
